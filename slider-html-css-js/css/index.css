@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e9e8e8;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+/* contenedor principal */
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 600px;
+    background-color: #f5f5f5;
+    box-shadow: 0 30px 50px #dbdbdb;
+}
+
+/* contenedor de item  */
+.container .slide .item{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 10%;
+    transform: translate(0, 50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+/* posicionamiento de las imagenes dentro del item y el objeto item seleccionado */
+.slide .item:nth-child(1),
+.slide .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* posicionamiento de los slider a seleccionar */
+.slide .item:nth-child(3){
+    left: 50%;
+}
+.slide .item:nth-child(4){
+    left: calc(50% + 220px);
+}
+
+
+/* centrado del content y ocultar */
+
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: white;
+    transform: translate(0, -50%);
+    display: none;
+}
+
+/* habilitar textos para el contenido 2 */
+.slide .item:nth-child(2) .content{
+    display: block;
+}
+
+
+/* estilado de textos */
+.content .content-name{
+    font-size: 40px;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px black;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+.content .content-description{
+    margin: 10px 0 20px 0;
+    opacity: 0;
+    text-shadow: 0 0 5px black;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+
+.content button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    background-color: black;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+
+
+/* botones de next y prev */
+.btns-change {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+.btns-change button{
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    background-color: black;
+    color: white;
+    border: 1px solid #505050;
+    transition: 0.3s;
+}
+
+.btns-change button:hover{
+    background-color: #ababab;
+    color: white;
+}
+
+
+
+
+/* animacion de los textos del inicio */
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+
+
+
+
+/* selecion de imagenes de los contenedores item */
+.first{
+    background-image: url("../img/paisaje1.png");
+    border-radius: 20px;
+}
+.second{
+    background-image: url("../img/paisaje2.png");
+    border-radius: 20px;
+}
+.third{
+    background-image: url("../img/paisaje3.png");
+    border-radius: 20px;
+}
+.fourth{
+    background-image: url("../img/paisaje4.png");
+    border-radius: 20px;
+}
