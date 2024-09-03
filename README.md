@@ -1,1 +1,1 @@
-![Alt text](./slider-html-css-js/img/Slider-de-imagenes.mp4)
+![Alt text](./slider-html-css-js/img/Slider-de-imagenes.gif)
